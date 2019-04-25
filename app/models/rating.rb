@@ -1,4 +1,4 @@
-class Rating < ApplicationRecord
+class Rating < ActiveRecord::Base
   belongs_to :course
   belongs_to :student
 end
