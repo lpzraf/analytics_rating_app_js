@@ -1,33 +1,5 @@
-<h1>Courses#new</h1>
+<h1>New Course</h1>
 
-<%= form_with scope: :course, url: courses_path, local: true do |form| %>
+<%= render 'form' %>
 
-  <% if @course.errors.any? %>
-     <div id="error_explanation">
-       <h2>
-         <%= pluralize(@course.errors.count, "error") %> prohibited
-         this course from being saved:
-       </h2>
-       <ul>
-         <% @course.errors.full_messages.each do |msg| %>
-           <li><%= msg %></li>
-         <% end %>
-       </ul>
-     </div>
-   <% end %>
-
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-
-  <p>
-    <%= form.label :instructor %><br>
-    <%= form.text_field :instructor %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
 <%= link_to 'Back', courses_path %>
