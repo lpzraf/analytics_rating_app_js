@@ -1,14 +1,19 @@
 <h1>Courses#new</h1>
 
-<%= form_with scope: :course, local: true do |form| %>
+<%= form_with scope: :course, url: courses_path, local: true do |form| %>
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
   </p>
 
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :cat_name %><br>
+    <%= form.text_field :cat_name %>
+  </p>
+
+  <p>
+    <%= form.label :instructor %><br>
+    <%= form.text_field :instructor %>
   </p>
 
   <p>
