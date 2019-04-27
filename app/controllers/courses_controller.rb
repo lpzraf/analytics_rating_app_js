@@ -49,7 +49,7 @@ class CoursesController < ApplicationController
     params.require(:course).permit(
       :name,
       :instructor,
-      #:cat_name????
+      :cat_id
     )
 end
 end
