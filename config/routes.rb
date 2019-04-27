@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   # get 'students/new'
   # get 'students/create'
   # get 'students/show'
-   get 'sessions/new'
-   get 'sessions/create'
-   get 'sessions/destroy'
+   get 'sessions/login'
+   get 'sessions/signup'
+   get 'sessions/welcome'
 
 resources :students
 
