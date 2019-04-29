@@ -11,6 +11,7 @@ Rails.application.routes.draw do
    get 'sessions/login'
    get 'sessions/signup'
    get 'sessions/welcome'
+   delete 'sessions/logout'
    root 'sessions#welcome'
 
 resources :students

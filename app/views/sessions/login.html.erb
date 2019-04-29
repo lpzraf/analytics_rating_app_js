@@ -1,7 +1,7 @@
 <h2>Login Please</h2>
  	<hr id="firstline"></hr>
 
-<form action="/login" method="POST">
+<!-- <form action="/login" method="POST">
 	<label for="email">Email</label>
 	<input type="text" id="outline" name="email" value="">
   <br>
@@ -13,4 +13,25 @@
 </form>
 <br>
 <br>
-<hr id="firstline"></hr>
+<hr id="firstline"></hr> -->
+
+
+<%= form_for @session do |f| %>
+  <% if @session.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@session.errors.count, "error") %> prohibited:</h2>
+    <ul>
+      <% @session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= f.label :login %><br />
+  <%= f.text_field :login %><br />
+  <br />
+  <%= f.label :password %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.submit "Login" %>
+<% end %>
