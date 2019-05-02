@@ -14,10 +14,10 @@ Rails.application.routes.draw do
    delete 'sessions/logout'
    root 'sessions#welcome'
 
-resources :students
+  resources :students
 
-resources :courses do
-  resources :comments
-end
+  resources :courses do
+    resources :comments
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

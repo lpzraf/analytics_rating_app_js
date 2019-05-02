@@ -22,8 +22,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    current_session.destroy
-    redirect_to root_path
+    log_out
+    redirect_to root_url
   end
 
 end
