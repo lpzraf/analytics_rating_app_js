@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+  def index
+  end
+
   def new
   end
 
@@ -11,5 +14,5 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-  end 
+  end
 end
