@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   get  '/help', to: 'static_pages#help'
   get  '/contact', to: 'static_pages#contact'
   get  '/about',   to: 'static_pages#about'
+  get  '/signup',  to: 'students#new'
+
 
   get 'sessions/login'
-  get 'sessions/signup'
+  #get 'sessions/signup'
   #get 'sessions/welcome'
   delete 'sessions/logout'
   #root 'sessions#welcome'
