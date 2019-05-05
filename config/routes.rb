@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
+  root 'static_pages#home'
   get 'static_pages/help'
   get 'static_pages/contact'
   get 'sessions/login'
   get 'sessions/signup'
   #get 'sessions/welcome'
   delete 'sessions/logout'
-  root 'sessions#welcome'
+  #root 'sessions#welcome'
 
   resources :students
 
