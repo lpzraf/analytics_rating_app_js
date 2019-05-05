@@ -10,7 +10,8 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      # Handle a successful save.
+      flash[:success] = "Welcome to the Analytics Rating App!"
+      redirect_to @student
     else
       render 'new'
     end
@@ -23,7 +24,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:user).permit(
+    params.require(:student).permit(
       :first_name,
       :last_name,
       :email,
