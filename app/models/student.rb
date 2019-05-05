@@ -1,4 +1,5 @@
 class Student < ActiveRecord::Base
+  self.per_page = 5
   attr_accessor :remember_token
   has_secure_password
   before_save { email.downcase! }
@@ -21,7 +22,8 @@ class Student < ActiveRecord::Base
 
   validates :password,
             presence: true,
-            length: { minimum: 6 }
+            length: { minimum: 6 },
+            allow_nil: true
 
   has_many :courses
 
@@ -55,5 +57,5 @@ class Student < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
-end 
+end
 end
