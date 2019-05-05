@@ -9,16 +9,18 @@ class SessionsController < ApplicationController
   # end
 
   def new
-    @session = Session.new
+    #@session = Session.new
   end
 
   def create
-    @session = Session.new(session_params)
-    if @session.save
-      redirect_to account_url
-    else
-      render :action => :new
-    end
+    student = Student.find_by(email: params[:session][:email].downcase)
+      if student && student.authenticate(params[:session][:password])
+        log_in student
+        redirect_to student
+      else
+        flash.now[:danger] = 'Invalid email/password combination'
+        render 'new'
+      end
   end
 
   def destroy

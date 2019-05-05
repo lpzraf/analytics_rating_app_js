@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
+  include SessionsHelper
+
+  #do i needs what below?
   helper_method :logged_in?, :current_user, :authorized_to_edit?, :not_allowed_to_edit, :redirect_if_not_logged_in
 
-
+  #do i needs what below?
 helpers do
 
     def logged_in?
