@@ -6,12 +6,15 @@ Rails.application.routes.draw do
   get  '/about',   to: 'static_pages#about'
   get  '/signup',  to: 'students#new'
   post '/signup',  to: 'students#create'
+  get    '/login', to: 'sessions#new'
+  post   '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
 
-  get 'sessions/login'
+  #get 'sessions/login'
   #get 'sessions/signup'
   #get 'sessions/welcome'
-  delete 'sessions/logout'
+  #delete 'sessions/logout'
   #root 'sessions#welcome'
 
   resources :students
