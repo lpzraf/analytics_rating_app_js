@@ -1,9 +1,6 @@
 module SessionsHelper
 
-  def log_out
-    session.delete(:student_id)
-    @current_student = nil
-  end
+
 
   # Logs in the given user.
   def log_in(student)
@@ -12,7 +9,7 @@ module SessionsHelper
 
   # Remembers a user in a persistent session.
   def remember(student)
-    #student.remember
+    student.remember
     cookies.permanent.signed[:student_id] = student.id
     cookies.permanent[:remember_token] = student.remember_token
   end
