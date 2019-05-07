@@ -1,0 +1,32 @@
+<li>
+  <%= image_tag("rails.png") %>
+  Course: <%= link_to course.name, course %>
+  Instructor: <%= link_to course.instructor, course %>
+
+  <% if current_student.admin? && !current_student?(student) %>
+    | <%= link_to "delete", student, method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+</li>
+
+
+
+
+<!-- <table>
+  <tr>
+    <th>Course</th>
+    <th>Instructor</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <#% @courses.each do |course| %>
+    <tr>
+      <td><#%= course.name %></td>
+      <td><#%= course.instructor %></td>
+      <td><#%= link_to 'Show', course_path(course) %></td>
+      <td><#%= link_to 'Edit', edit_course_path(course) %></td>
+      <td><#%= link_to 'Destroy', course_path(course),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <#% end %>
+</table> -->

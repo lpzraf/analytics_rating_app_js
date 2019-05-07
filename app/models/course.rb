@@ -1,4 +1,5 @@
 class Course < ActiveRecord::Base
+  self.per_page = 5
   has_many :students
   has_many :ratings
   has_many :comments

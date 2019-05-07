@@ -4,7 +4,8 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
+        <!-- <li><3%= link_to "Help", help_path %></li> -->
+        <li><%= link_to "Courses", courses_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Students", students_path %></li>
           <li class="dropdown">
