@@ -1,7 +1,6 @@
 <li>
   <%= image_tag("rails.png") %>
   Course: <%= link_to course.name, course %>
-  Instructor: <%= link_to course.instructor, course %>
 
   <% if current_student.admin? && !current_student?(student) %>
     | <%= link_to "delete", student, method: :delete, data: { confirm: "Are you sure?" } %>
