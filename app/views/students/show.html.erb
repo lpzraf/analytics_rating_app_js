@@ -6,6 +6,10 @@
         <%= gravatar_for @student %>
         <%= @student.first_name %> <%= @student.last_name %>
       </h1>
+      <br>
+      <br>
+      <br>
+      <h3><%= link_to 'Rate Courses', controller: 'courses' %> or <%= link_to 'Find Students', controller: 'students' %></h3>
     </section>
   </aside>
 </div>
