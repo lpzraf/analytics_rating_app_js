@@ -1,12 +1,11 @@
 <% provide(:title, 'All courses') %>
 <h1>Courses</h1>
 
+<h3><%= link_to 'Create and Rate a Course!', new_course_path %></h3>
+
 <%= will_paginate @courses%>
 <ul class="students">
-  <h3><%= link_to 'Create and Rate a new Course!', new_course_path %></h3>
-  <% @courses.each do |course| %>
   <%= render @courses %>
-  <% end %>
 </ul>
 
 <%= will_paginate @courses%>
