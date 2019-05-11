@@ -2,6 +2,12 @@
 @import "bootstrap";
 
 
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 /* mixins, variables, etc. */
 
 @mixin box_sizing {
