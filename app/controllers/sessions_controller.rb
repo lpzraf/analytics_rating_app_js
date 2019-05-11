@@ -54,6 +54,7 @@ end
 ###
   def destroy
     log_out if logged_in?
+    flash[:success] = "Good bye! You have succesfully logged out."
     redirect_to root_url
   end
 
