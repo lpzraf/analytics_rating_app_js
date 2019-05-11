@@ -1,7 +1,4 @@
 module SessionsHelper
-
-
-
   # Logs in the given user.
   def log_in(student)
     session[:student_id] = student.id

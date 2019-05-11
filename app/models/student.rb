@@ -27,6 +27,9 @@ class Student < ActiveRecord::Base
 
   has_many :courses
 
+  # new
+  # has_many :ratings
+
 
   class << self
   # Returns the hash digest of the given string.

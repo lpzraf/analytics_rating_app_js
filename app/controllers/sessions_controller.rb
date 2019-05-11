@@ -19,19 +19,15 @@ class SessionsController < ApplicationController
 
 def create
     if auth
-        @student = Student.find_by(uid: auth["uid"])
-        if @student
-            session[:student_id] = @student.id
-            redirect_to student_path(@student)
-        else
-            @student = Student.new_student_from_auth(auth)
-            if @student.save
-                session[:student_id] = @student.id
-                redirect_to student_path(@student)
-            else
-                raise @student.errors.full_messages.inspect
-            end
-        end
+      @student = Student.find_or_create_by(uid: auth['uid']) do |u|
+        u.first_name = auth['info']['first_name']
+        u.email = auth['info']['email']
+        u.password = auth['uid'] #use secure random hex
+      end
+
+      session[:student_id] = @student.id
+
+      redirect_to '/courses'
     else
         student = Student.find_by(email: params[:session][:email].downcase)
           if student && student.authenticate(params[:session][:password])
@@ -51,12 +47,12 @@ end
 
 
 
-###
-  def destroy
-    log_out if logged_in?
-    flash[:success] = "Good bye! You have succesfully logged out."
-    redirect_to root_url
-  end
+  ###
+  # def destroy
+  #   log_out if logged_in?
+  #   flash[:success] = "Good bye! You have succesfully logged out."
+  #   redirect_to root_url
+  # end
 
   private
 
