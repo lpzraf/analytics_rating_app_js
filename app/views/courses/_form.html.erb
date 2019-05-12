@@ -15,7 +15,7 @@
    <% end %>
 
   <p>
-    <%= form.label :name %><br>
+    <%= form.label :Course_name %><br>
     <%= form.text_field :name %>
   </p>
 
@@ -23,13 +23,15 @@
     <%= form.label :instructor %><br>
     <%= form.text_field :instructor %>
   </p>
-
-  <p>
-    <%= form.label :Category_name %><br>
-    <%= form.text_field :cat_name %>
-  </p>
-
   <p>
     <%= form.submit %>
   </p>
+<% end %>
+
+
+<%= form_for(@category) do |cat| %>
+  <%= cat.label :cat_name %><br>
+  <%= cat.text_field :cat_name %>
+  <br>
+  <%= cat.submit %>
 <% end %>

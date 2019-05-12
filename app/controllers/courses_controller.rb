@@ -60,7 +60,8 @@ class CoursesController < ApplicationController
     params.require(:course).permit(
       :name,
       :instructor,
-      :cat_id
+      :cat_id,
+      category_attributes:[:cat_name]
     )
   end
 end

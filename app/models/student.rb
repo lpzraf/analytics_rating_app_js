@@ -26,6 +26,7 @@ class Student < ActiveRecord::Base
             allow_nil: true
 
   has_many :courses
+  has_many :ratings
 
   # new
   # has_many :ratings

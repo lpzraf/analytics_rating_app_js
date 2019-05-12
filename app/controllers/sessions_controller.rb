@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    #@session = Session.new
   end
 
   # def create
@@ -47,12 +46,12 @@ end
 
 
 
-  ###
-  # def destroy
-  #   log_out if logged_in?
-  #   flash[:success] = "Good bye! You have succesfully logged out."
-  #   redirect_to root_url
-  # end
+  ##
+  def destroy
+    log_out if logged_in?
+    flash[:success] = "Good bye! You have succesfully logged out."
+    redirect_to root_url
+  end
 
   private
 
