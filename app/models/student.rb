@@ -25,10 +25,9 @@ class Student < ActiveRecord::Base
             length: { minimum: 6 },
             allow_nil: true
 
-  has_many :courses
-  has_many :ratings
+  has_many :student_courses
+  has_many :courses, through: :student_courses
 
-  # new
   # has_many :ratings
 
 

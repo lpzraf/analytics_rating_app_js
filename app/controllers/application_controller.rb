@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 #  helper_method :logged_in?, :current_user, :authorized_to_edit?, :not_allowed_to_edit, :redirect_if_not_logged_in
 
   #do i needs what below?
-# helpers do
+
+#helpers do
 #
 #     def logged_in?
 #       !!current_user
@@ -26,11 +27,11 @@ class ApplicationController < ActionController::Base
 #       end
   #   end
   #
-  #   def redirect_if_not_logged_in
-  #     if !logged_in?
-  #       flash[:errors] = "You must be logged in to check this page"
-  #       redirect '/login'
-  #     end
-  #   end
-  # end
+   #    def redirect_if_not_logged_in
+   #      if !logged_in?
+   #        flash[:errors] = "You must be logged in to check this page"
+   #        redirect '/login'
+   #      end
+   #    end
+   # end
 end

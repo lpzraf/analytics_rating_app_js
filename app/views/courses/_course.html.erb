@@ -2,7 +2,7 @@
   <%= image_tag("rails.png") %>
   Course: <%= link_to course.name, course %>
 
-  <% if current_student.admin? && !current_student?(student) %>
+  <% if current_student && current_student.admin? %>
     | <%= link_to "delete", student, method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 </li>
