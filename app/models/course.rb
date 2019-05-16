@@ -6,5 +6,12 @@ class Course < ActiveRecord::Base
   has_many :ratings
   has_many :comments
   validates :name, presence: true, length: { in: 3..20 }
+  validates :ratings, presence: true, length: { in: 1..5 }
   validates :instructor, presence: true, length: { in: 3..20}
+
+
+    def blank_stars
+     5 - rating.to_i
+    end
+
 end

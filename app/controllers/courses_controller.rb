@@ -7,12 +7,6 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    # @courses = Course.where(course_id: @course.id).order("created_at DESC")
-    # if @courses.blank?
-    #   @avg_rating = 0
-    # else
-    #   @avg_rating = @courses.average(:rating).round(2)
-    # end
   end
 
   def new
@@ -60,7 +54,7 @@ class CoursesController < ApplicationController
     params.require(:course).permit(
       :name,
       :instructor,
-      :cat_id,
+      :rating,
       category_attributes:[:cat_name]
     )
   end
