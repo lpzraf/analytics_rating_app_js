@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ratings
   get 'static_pages/home'
   root 'static_pages#home'
   #get  '/help', to: 'static_pages#help'
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
   resources :students
 
   resources :courses do
-    resources :comments, :categories
+    resources :comments, :categories, :ratings
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
