@@ -1,4 +1,6 @@
 <% provide(:title, @student.first_name) %>
+<h3 id="text-center"><%= link_to 'Rate Courses', controller: 'courses' %> or <%= link_to 'Find Students', controller: 'students' %></h3>
+
 <div class="row">
   <aside class="col-md-4">
     <section class="student_info">
@@ -9,9 +11,14 @@
       <br>
       <br>
       <br>
-      <h3><%= link_to 'Rate Courses', controller: 'courses' %></h3>
-      <h3>or</h3>
-      <h3><%= link_to 'Find Students', controller: 'students' %></h3>
+      <br>
+      <br>
+      <br>
+      <h1>Total Courses Added: </h1>
+      <h1>Total of Courses Rated: </h1>
+      <br>
+      <br>
+      <br>
     </section>
   </aside>
 </div>
