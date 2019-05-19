@@ -1,0 +1,25 @@
+<%= form_for @rating do |form| %>
+
+  <% if @rating.errors.any? %>
+     <div id="error_explanation">
+       <h2>
+         <%= pluralize(@rating.errors.count, "error") %> prohibited
+         this rating from being saved:
+       </h2>
+       <ul>
+         <% @rating.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+         <% end %>
+       </ul>
+     </div>
+   <% end %>
+
+    <%= form.hidden_field :course_id %>
+  <p>
+    <%= form.label :rating, "Provide a 1-5 Rating" %><br>
+    <%= form.number_field :rating, min: 0, max: 5 %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

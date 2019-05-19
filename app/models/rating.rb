@@ -1,8 +1,15 @@
 class Rating < ApplicationRecord
+
   belongs_to :student
   belongs_to :course
 
   validates :rating,
-            presence: true
-            #length: { maximum: 5 } validate min and max do not use length do numericality 
+            numericality: { less_than_or_equal_to: 5,
+            greater_than: 0,
+            only_integer: true }
+
+
+  def self.average_rating
+      average(:rating).round(2) 
+  end
 end
