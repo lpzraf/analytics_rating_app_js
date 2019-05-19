@@ -4,7 +4,7 @@ class Course < ActiveRecord::Base
   has_many :ratings
   has_many :students, through: :ratings
   has_many :comments
-  validates :name, presence: true, length: { in: 3..20 }
+  validates :name, presence: true, length: { in: 3..25 }
   validates :instructor, presence: true, length: { in: 3..20}
 
 
