@@ -1,7 +1,8 @@
 #have a link for a user to rate a course at the very top nice and clean for Jenn (nested route)
 
 <h1>Course: <%= @course.name %></h1>
-
+<h3><%= link_to 'See All Reviews For This Course!', course_ratings_path(@course.id) %></h3>
+<br>
 <%= image_tag("rails.png") %>
 <p>
   <strong>Course:</strong>
