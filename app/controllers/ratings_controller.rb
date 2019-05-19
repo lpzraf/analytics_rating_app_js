@@ -18,6 +18,7 @@ class RatingsController < ApplicationController
   def create
     #@course = Course.find_by_id(params[:course_id])
     @rating = current_student.ratings.build(rating_params)
+    #@rating.course = @course
     if @rating.save
       redirect_to course_path(@rating.course)
     else

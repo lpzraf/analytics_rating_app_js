@@ -10,6 +10,7 @@ class Rating < ApplicationRecord
 
 
   def self.average_rating
-      average(:rating).round(2) 
+      average(:rating)
+      #.round(2) 
   end
 end
