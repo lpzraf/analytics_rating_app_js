@@ -4,20 +4,11 @@
 </h3>
 <br>
 <%= image_tag("rails.png") %>
-<p>
-  <strong>Course:</strong>
-  <%= @course.name %>
-</p>
+<p><strong>Course:</strong><%= @course.name %></p>
 
-<p>
-  <strong>Instructor:</strong>
-  <%= @course.instructor %>
-</p>
+<p><strong>Instructor:</strong><%= @course.instructor %></p>
 
-<p>
-  <strong>Average Rating:</strong>
-  <%= @course.ratings.average_rating %>
-</p>
+<p><strong>Average Rating:</strong><%= @course.ratings.average_rating %></p>
 
 <h2>Comments</h2>
 <%= render @course.comments %>

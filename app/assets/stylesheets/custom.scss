@@ -21,6 +21,7 @@
 body {
   padding-top: 60px;
   background-image: url(/assets/background-02.png);
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 section {
@@ -63,6 +64,11 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+.bigger-font {
+    font-size: 2.1em;
+      font-weight: bold;
 }
 
 /* header */
