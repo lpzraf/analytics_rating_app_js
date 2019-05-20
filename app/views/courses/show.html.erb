@@ -4,18 +4,8 @@
 </h3>
 <br>
 <%= image_tag("rails.png") %>
-<p><strong>Course:</strong><%= @course.name %></p>
+<p class="bigger-font">Course: <%= @course.name %></p>
 
-<p><strong>Instructor:</strong><%= @course.instructor %></p>
+<p class="bigger-font">Instructor: <%= @course.instructor %></p>
 
-<p><strong>Average Rating:</strong><%= @course.ratings.average_rating %></p>
-
-<h2>Comments</h2>
-<%= render @course.comments %>
-
-<hr>
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_course_path(@course) %>
-<%= link_to 'Back', courses_path %>
+<p class="bigger-font">Average Rating: <%= @course.ratings.average_rating %></p>
