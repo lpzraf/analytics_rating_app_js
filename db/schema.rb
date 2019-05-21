@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_234230) do
+ActiveRecord::Schema.define(version: 2019_05_21_021649) do
 
   create_table "categories", force: :cascade do |t|
     t.string "cat_name"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_16_234230) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.integer "rating"
+    t.integer "rating", default: 0
     t.integer "course_id"
     t.integer "student_id"
     t.datetime "created_at", null: false

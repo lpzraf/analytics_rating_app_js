@@ -1,8 +1,7 @@
 class CoursesController < ApplicationController
-  #http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
   def index
-    @courses = Course.paginate(page: params[:page])
+    @courses = Course.paginate(page: params[:page]).order("created_at DESC")
   end
 
   def show
@@ -45,16 +44,10 @@ class CoursesController < ApplicationController
   end
 
   private
-    #new
-     #  def set_course
-     #   @course = Course.find(params[:id])
-     # end
-
   def course_params
     params.require(:course).permit(
       :name,
-      :instructor,
-      category_attributes:[:cat_name]
+      :instructor
     )
   end
 end

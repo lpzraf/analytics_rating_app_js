@@ -31,6 +31,4 @@ class RatingsController < ApplicationController
   def rating_params
     params.require(:rating).permit(:rating, :course_id )
   end
-
-  #look at nested resources lesson.....rating will not save if it doesnt have both course and student id (one comes from curent user method adn the other from the id in the url)
 end
