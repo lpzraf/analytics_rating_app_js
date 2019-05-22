@@ -11,6 +11,10 @@ class Rating < ApplicationRecord
 
 
     def self.average_rating
+      if average(:rating) == nil
+        0
+      else
         average(:rating).round(2)
+      end
     end
 end

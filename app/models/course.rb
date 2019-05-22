@@ -7,9 +7,8 @@ class Course < ActiveRecord::Base
   validates :name, presence: true, length: { in: 3..25 }
   validates :instructor, presence: true, length: { in: 3..20}
 
-
-    def blank_stars
-     5 - rating.to_i
-    end
+  def self.ordered
+  order("name")
+  end
 
 end

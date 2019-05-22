@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = Course.paginate(page: params[:page]).order("created_at DESC")
+    @courses = Course.paginate(page: params[:page]).ordered
   end
 
   def show

@@ -11,15 +11,20 @@ class SessionsController < ApplicationController
         end
 
         session[:student_id] = @student.id
-        flash[:success] = "Welcome!"
+        flash[:success] = "Welcome"
         redirect_to '/courses'
       else
-          student = Student.find_by(email: params[:session][:email].downcase)
-            if student && student.authenticate(params[:session][:password])
-              log_in student
-              params[:session][:remember_me] == '1' ? remember(student) : forget(student)
-              #redirect_back_or student
-              redirect_to student
+           @student = Student.find_by(email: params[:session][:email].downcase)
+           #@student = Student.find_by(first_name: params[:student][:first_name])
+            # if student && student.authenticate(params[:session][:password])
+            #   log_in student
+            #   params[:session][:remember_me] == '1' ? remember(student) : forget(student)
+            #   #redirect_back_or student
+            if @student && @student.authenticate(params[:session][:password])
+              session[:student_id] = @student.id
+              flash[:success] = "Awesome. You are logged in!"
+
+              redirect_to @student
             else
               flash.now[:danger] = 'Invalid email/password combination'
               render 'new'

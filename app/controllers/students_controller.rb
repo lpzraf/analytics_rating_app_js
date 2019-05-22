@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :logged_in_student, only: [:index, :edit, :update, :destroy]
   before_action :correct_student,   only: [:edit, :update]
-  before_action :admin_student,     only: :destroy
+  # before_action :admin_student,     only: :destroy
 
 
   def index
@@ -60,15 +60,14 @@ class StudentsController < ApplicationController
   end
 
   # Confirms an admin student.
-   def admin_student
-     redirect_to(root_url) unless current_student.admin?
-   end
+   # def admin_student
+   #   redirect_to(root_url) unless current_student.admin?
+   # end
 
    # Before filters
    # Confirms a logged-in user.
    def logged_in_student
      unless logged_in?
-       #store_location
        flash[:danger] = "Please log in."
        redirect_to login_url
      end
