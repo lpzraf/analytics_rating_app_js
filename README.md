@@ -27,9 +27,9 @@ The following instructions will get you a copy of the project up and running on 
 ## Built With
 
 * [Ruby on Rails](https://rubyonrails.org/) - A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC).
-* [Bundler](https://bundler.io/) - Gem dependency Management
-* [SQLite](https://www.sqlite.org/index.html) - SQL database
-* [Thin](https://rubygems.org/gems/thin/versions/1.7.0) - A thin and fast web server
+* [Bundler](https://bundler.io/) - Gem dependency Management.
+* [SQLite](https://www.sqlite.org/index.html) - SQL database.
+* [Thin](https://rubygems.org/gems/thin/versions/1.7.0) - A thin and fast web server.
 * [OmiAuth](https://github.com/omniauth/omniauth) - Flexible authentication system utilizing Rack middleware.
 
 
