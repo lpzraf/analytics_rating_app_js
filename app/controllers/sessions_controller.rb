@@ -5,12 +5,15 @@ class SessionsController < ApplicationController
   def create
       if auth
         @student = Student.find_or_create_by(uid: auth['uid']) do |u|
-          u.first_name = auth['info']['first_name']
+          u.first_name = auth['info']['name'].split(" ")[0..-2].join(" ")
+          u.last_name = auth['info']['name'].split(" ").last
           u.email = auth['info']['email']
           u.password = auth['uid'] #use secure random hex
         end
 
         session[:student_id] = @student.id
+        binding.pry
+
         flash[:success] = "Welcome"
         redirect_to '/courses'
       else

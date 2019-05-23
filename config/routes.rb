@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   resources :students
 
   resources :courses do
-    resources :comments, :categories, :ratings
+    resources :categories, :ratings
   end
 end
