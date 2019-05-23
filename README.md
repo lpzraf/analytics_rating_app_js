@@ -1,6 +1,6 @@
 # Analytics Rating App  
 
-TO DO ------Kind of a ‘todo’ of curated classes I took plus I rank them.  
+The Analytics Rating App is a basic web application built with Ruby On Rails, Bootstrap and a SQLite database. It started as a personal curated list of classes I've taken for all things digital analytics, plus how I ranked them, but it can be used by anyone else. Create a profile and rate away your favorite analytics resources!  
 
 ## Getting Started
 
@@ -18,10 +18,10 @@ The following instructions will get you a copy of the project up and running on 
 ***bundle install***
 
 4. Set your server running:
-***rails s TO DO***
+***thin start --ssl***
 
-5. Copy/Paste in the browser the URL given by:
-***rails s TO DO***
+5. Copy/Paste in the browser the URL given by the server:
+***0.0.0.0:3000***
 
 
 ## Built With
@@ -29,6 +29,9 @@ The following instructions will get you a copy of the project up and running on 
 * [Ruby on Rails](https://rubyonrails.org/) - A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC).
 * [Bundler](https://bundler.io/) - Gem dependency Management
 * [SQLite](https://www.sqlite.org/index.html) - SQL database
+* [Thin](https://rubygems.org/gems/thin/versions/1.7.0) - A thin and fast web server
+* [OmiAuth](https://github.com/omniauth/omniauth) - Flexible authentication system utilizing Rack middleware.
+
 
 ## Contributing
 
@@ -40,9 +43,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* ToDo
-* ToDo
-* Flatiron School coaches
-
+* Jenn Hansen (the best!)
 
 Check me out at ***www.rafaelopez.com***
