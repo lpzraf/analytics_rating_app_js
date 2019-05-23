@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
         end
 
         session[:student_id] = @student.id
-        binding.pry
 
         flash[:success] = "Welcome"
         redirect_to '/courses'
