@@ -26,6 +26,8 @@ class RatingsController < ApplicationController
     end
   end
 
+  def top_rated_classes
+  end
   private
 
   def rating_params

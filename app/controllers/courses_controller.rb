@@ -44,8 +44,7 @@ class CoursesController < ApplicationController
   end
 
   def top_rated_courses
-
-    # @top_rated = Course.joins(:reviews).group("courses.id").order("sum(reviews.rating) desc")
+    @courses =  Rating.limit(5).order(average_rating: :desc).group(:course_id).joins(:course).average(:rating)
   end
 
   private
