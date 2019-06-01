@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   post   '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'
+  get  '/top_rated_courses', to: 'courses#top_rated_courses'
+
 
 
   resources :students
 
   resources :courses do
-    resources :categories, :ratings
+    resources :categories, :ratings, :only => [:new, :index, :create]
   end
 end

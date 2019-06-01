@@ -43,6 +43,11 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
 
+  def top_rated_courses
+
+    # @top_rated = Course.joins(:reviews).group("courses.id").order("sum(reviews.rating) desc")
+  end
+
   private
   def course_params
     params.require(:course).permit(
