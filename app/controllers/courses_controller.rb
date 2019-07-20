@@ -2,6 +2,10 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.paginate(page: params[:page]).ordered
+    respond_to do |f|
+      f.html
+      f.json {render json: @courses}
+    end
   end
 
   def show
