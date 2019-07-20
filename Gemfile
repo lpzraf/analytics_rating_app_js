@@ -25,6 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'active_model_serializers'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
