@@ -62,7 +62,7 @@ function Course(course) {
 
 Course.prototype.formatIndex = function () {
   let courseHtml = `
-  <a href="/courses/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name}</h1></a>
+  <a href="/courses/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name} by ${this.instructor}</h1></a>
   `
   return courseHtml
 }
