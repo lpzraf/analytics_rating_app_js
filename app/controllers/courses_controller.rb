@@ -28,10 +28,16 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      redirect_to @course
+      #redirect_to @course
+      render json: @course
     else
       render 'new'
     end
+  end
+
+  def next
+    @next_course = @course.next
+    render json: @next_course
   end
 
   def update

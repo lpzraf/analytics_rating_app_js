@@ -20,6 +20,16 @@ class Course < ActiveRecord::Base
     Courses.joins(:ratings).avaerage(:rating).order('ratings.rating desc')
   end
 
+  def next
+    course = Course.where("id > ?", id).first
+
+    if course
+      course
+    else
+      Course.first
+    end 
+  end
+
   # def self.top_rated_courses
   #   @courses =  Rating.limit(5).order(average_rating: :desc).group(:course_id).joins(:course).average(:rating)
   # end

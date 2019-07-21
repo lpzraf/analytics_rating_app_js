@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'
   get  '/top_rated_courses', to: 'courses#top_rated_courses'
+  get 'courses/:id/next', to: 'courses#next'
 
 
 
