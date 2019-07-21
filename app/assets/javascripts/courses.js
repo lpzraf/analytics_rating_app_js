@@ -14,21 +14,17 @@ const bindClickHandlers = () => {
     })
     $(document).on('click','.show_link',function(e) {
       e.preventDefault()
-      $('.container').html('')
+      $('.ajaxStyling').html('')
       let id = $(this).attr('data-id')
       fetch(`/courses/${id}.json`)
       .then(res => res.json())
       .then(course => {
         let newCourse = new Course(course)
         let courseHtml = newCourse.formatShow()
-        $('.container').append(courseHtml)
+        $('.ajaxStyling').append(courseHtml)
       })
     })
 
-    $(document).on('click', '.nextCourse', function() {
-      let id = $(this).attr('data-id')
-      fetch(`courses/${id}/next`)
-  })
 
     $('#new_course').on('submit', function(e) {
     e.preventDefault()
@@ -36,10 +32,10 @@ const bindClickHandlers = () => {
     const values = $(this).serialize()
 
     $.post('/courses', values).done(function(data) {
-      $('.container').html('')
+      $('.ajaxStyling').html('')
       const newCourse = new Course(data)
       const htmlToAdd = newCourse.formatShow()
-      $('.container').html(htmlToAdd)
+      $('.ajaxStyling').html(htmlToAdd)
 
     })
   })
@@ -49,11 +45,11 @@ const getCourses = () => {
   fetch('/courses.json')
     .then(res => res.json())
     .then(courses => {
-      $('.container').html('')
+      $('.ajaxStyling').html('')
       courses.forEach((course) => {
         let newCourse = new Course(course)
         let courseHtml = newCourse.formatIndex()
-        $('.container').append(courseHtml)
+        $('.ajaxStyling').append(courseHtml)
       })
     })
 }
@@ -73,8 +69,7 @@ Course.prototype.formatIndex = function () {
 
 Course.prototype.formatShow = function () {
   let courseHtml = `
-  <h3>${this.name}</h3>
-  <button class="nextCourse">Next</button>
+  <a href="/courses/${this.id}" data-id="${this.id}"><h3 class="showText">${this.name} by ${this.instructor}</h3></a>
   `
   return courseHtml
 }
