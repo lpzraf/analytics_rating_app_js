@@ -1,6 +1,6 @@
 # Analytics Rating App  
 
-The Analytics Rating App is a basic web application built with Ruby On Rails, Bootstrap and a SQLite database. It started as a personal curated list of classes I've taken for all things digital analytics, plus how I ranked them, but it can be used by anyone else. Create a profile and rate away your favorite analytics resources!  
+The Analytics Rating App is a basic web application built with Ruby On Rails, vanilla JavaScript, jQuery, Bootstrap and a SQLite database. It started as a personal curated list of classes I've taken for all things digital analytics, plus how I ranked them, but it can be used by anyone else. Create a profile and rate away your favorite analytics resources!  
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ The following instructions will get you a copy of the project up and running on 
 ## Installation
 
 1. Clone the repo from the following URL to your machine:
-***https://github.com/lpzraf/analytics_rating_app***
+***https://github.com/lpzraf/analytics_rating_app_js***
 
 2. Move to the right directory performing the following command:
 ***cd analytics_rating_app***
@@ -27,6 +27,7 @@ The following instructions will get you a copy of the project up and running on 
 ## Built With
 
 * [Ruby on Rails](https://rubyonrails.org/) - A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC).
+* [jQuery](https://api.jquery.com/jquery.ajax/) - A JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.
 * [Bundler](https://bundler.io/) - Gem dependency Management.
 * [SQLite](https://www.sqlite.org/index.html) - SQL database.
 * [Thin](https://rubygems.org/gems/thin/versions/1.7.0) - A thin and fast web server.
@@ -35,14 +36,10 @@ The following instructions will get you a copy of the project up and running on 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/lpzraf/analytics_rating_app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/lpzraf/analytics_rating_app_js. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Jenn Hansen (the best!)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 Check me out at ***www.rafaelopez.com***
