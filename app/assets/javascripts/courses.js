@@ -12,6 +12,7 @@ const bindClickHandlers = () => {
       history.pushState(null,null,"courses")
       getCourses()
     })
+
     $(document).on('click','.show_link',function(e) {
       e.preventDefault()
       $('.ajaxStyling').html('')
@@ -27,16 +28,15 @@ const bindClickHandlers = () => {
 
 
     $('#new_course').on('submit', function(e) {
-    e.preventDefault()
+      e.preventDefault()
 
-    const values = $(this).serialize()
+      const values = $(this).serialize()
 
     $.post('/courses', values).done(function(data) {
       $('.ajaxStyling').html('')
       const newCourse = new Course(data)
       const htmlToAdd = newCourse.formatShow()
       $('.ajaxStyling').html(htmlToAdd)
-
     })
   })
 }
@@ -58,7 +58,10 @@ function Course(course) {
   this.id = course.id
   this.name = course.name
   this.instructor = course.instructor
+  this.students = course.students
 }
+
+// constructor function above has prototype property below
 
 Course.prototype.formatIndex = function () {
   let courseHtml = `
@@ -71,5 +74,10 @@ Course.prototype.formatShow = function () {
   let courseHtml = `
   <a href="/courses/${this.id}" data-id="${this.id}"><h3 class="showText">${this.name} by ${this.instructor}</h3></a>
   `
+
+  courseHtml += this.students.map(function(student) {
+    return `<p class="show_link">Student: ${student.first_name} ${student.last_name}</p>`;
+  }).join('');
+
   return courseHtml
 }

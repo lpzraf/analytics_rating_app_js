@@ -1,5 +1,5 @@
 class CourseSerializer < ActiveModel::Serializer
-  attributes :id, :name, :instructor
+  attributes :id, :name, :instructor, :students
 
 
     has_many :ratings
