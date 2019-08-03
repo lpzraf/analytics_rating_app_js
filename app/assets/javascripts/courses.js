@@ -42,18 +42,9 @@ const bindClickHandlers = () => {
               return 1;
             }
             return 0;
-
-            // if(a.first_name > b.first_name) return 1;
-            // else if(b.first_name > a.first_name) return -1;
-            // return 0;
           }).map(objUser => {
               $('.ajaxStyling').append( `<h2 class="show_link" id="marginTop">${objUser.first_name} ${objUser.last_name}</h2>`);
-            });
-
-          // $('.ajaxStyling').html('<h1>' + sortedStudents + '</h1>')
-
-
-
+          });
         })
       })
     })
