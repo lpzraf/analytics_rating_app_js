@@ -23,6 +23,38 @@ const bindClickHandlers = () => {
         let newCourse = new Course(course)
         let courseHtml = newCourse.formatShow()
         $('.ajaxStyling').append(courseHtml)
+        var button = document.querySelector('.ajaxStyling')
+        button.insertAdjacentHTML('afterend','<button id="btn-click" class="button">Click Me!</button>');
+        $('#btn-click').on('click', (e) => {
+          e.preventDefault()
+          // console.log(newCourse.students)
+
+          $('.ajaxStyling').html('')
+          $('.ajaxStyling').append( `<h1>Oops! Sorted.</h1>`);
+
+          let sortedStudents = newCourse.students.sort( (a, b) => {
+            var nameA = a.first_name.toUpperCase();
+            var nameB = b.first_name.toUpperCase();
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+            return 0;
+
+            // if(a.first_name > b.first_name) return 1;
+            // else if(b.first_name > a.first_name) return -1;
+            // return 0;
+          }).map(objUser => {
+              $('.ajaxStyling').append( `<h2 class="show_link" id="marginTop">${objUser.first_name} ${objUser.last_name}</h2>`);
+            });
+
+          // $('.ajaxStyling').html('<h1>' + sortedStudents + '</h1>')
+
+
+
+        })
       })
     })
 
@@ -76,7 +108,7 @@ Course.prototype.formatShow = function () {
   `
 
   courseHtml += this.students.map(function(student) {
-    return `<p class="show_link">Student: ${student.first_name} ${student.last_name}</p>`;
+    return `<p class="show_link">${student.first_name} ${student.last_name}</p>`;
   }).join('');
 
   return courseHtml
