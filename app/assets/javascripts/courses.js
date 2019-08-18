@@ -49,7 +49,6 @@ const bindClickHandlers = () => {
       })
     })
 
-
     $('#new_course').on('submit', function(e) {
       e.preventDefault()
 
